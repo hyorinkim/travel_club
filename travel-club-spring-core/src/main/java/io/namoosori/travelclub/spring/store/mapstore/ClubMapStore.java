@@ -1,6 +1,7 @@
-package io.namoosori.travelclub.spring.store;
+package io.namoosori.travelclub.spring.store.mapstore;
 
 import io.namoosori.travelclub.spring.aggregate.club.TravelClub;
+import io.namoosori.travelclub.spring.store.ClubStore;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class ClubMapStore implements ClubStore{
+public class ClubMapStore implements ClubStore {
 
     private Map<String,TravelClub> clubMap;
     public ClubMapStore (){
