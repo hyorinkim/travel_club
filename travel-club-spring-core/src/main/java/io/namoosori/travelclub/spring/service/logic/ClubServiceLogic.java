@@ -4,10 +4,15 @@ import io.namoosori.travelclub.spring.aggregate.club.TravelClub;
 import io.namoosori.travelclub.spring.service.ClubService;
 import io.namoosori.travelclub.spring.service.sdo.TravelClubCdo;
 import io.namoosori.travelclub.spring.shared.NameValueList;
+import io.namoosori.travelclub.spring.store.ClubStore;
 
 import java.util.List;
 
 public class ClubServiceLogic implements ClubService {
+    private ClubStore clubStore;
+    public ClubServiceLogic(ClubStore clubStore){
+        this.clubStore=clubStore;
+    }
     @Override
     public String registerClub(TravelClubCdo club) {
         return null;
