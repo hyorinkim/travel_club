@@ -4,13 +4,17 @@
        xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <bean id="clubStore" class="io.namoosori.travelclub.spring.store.mapstore.ClubMapStore"/>
+<!--    <bean id="clubStore" class="io.namoosori.travelclub.spring.store.mapstore.ClubMapStore"/>-->
 
-    <bean id="clubService" class="io.namoosori.travelclub.spring.service.logic.ClubServiceLogic">
-        <constructor-arg ref="clubStore"/>
-<!--        clubService가 생성이 되는 시점 사용이 되는 시점에서 ClubMapStore를 arg로 참조하여 넣어달라는 의미가 됨-->
-    </bean>
+<!--    <bean id="clubService" class="io.namoosori.travelclub.spring.service.logic.ClubServiceLogic">-->
+<!--        <constructor-arg ref="clubStore"/>-->
+<!--&lt;!&ndash;        clubService가 생성이 되는 시점 사용이 되는 시점에서 ClubMapStore를 arg로 참조하여 넣어달라는 의미가 됨&ndash;&gt;-->
+<!--    </bean>-->
 <!--    bean의 id는 임의로 만들어서 사용 가능하다.-->
+    <context:component-scan base-package="io.namoosori.travelclub.spring"/>
+<!--    베이스패키지 부터 하위까지  bean들을 찾아라 라는 의미이다.-->
+<!--    bean으로 사용할 class에 bean annotation으로 지정해줘야한다.-->
+<!--    bean으로 등록할 수있는 annotation은 4가지가 있다.-->
 </beans>
 <!--applicationContext를 읽어서 구성하는 부분도 필요함-->
 <!--annotation을 이용해서 주입하는 방법이 있음-->
