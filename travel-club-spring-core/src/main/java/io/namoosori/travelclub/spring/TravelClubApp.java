@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Date;
 
 public class TravelClubApp {
     public static void main(String[] args) {
@@ -25,6 +26,10 @@ public class TravelClubApp {
         ClubService clubService = context.getBean("clubService",ClubService.class);
         String clubId=clubService.registerClub(clubCdo);
 
-        System.out.println("ID "+clubId);
+        TravelClub foundedClub = clubService.findClubById(clubId);
+        System.out.println("ID "+foundedClub.getId());
+        System.out.println("Club name "+foundedClub.getName());
+        System.out.println("Club intro "+foundedClub.getIntro());
+        System.out.println("Club foundationTime "+new Date(foundedClub.getFoundationTime()));
     }
 }
